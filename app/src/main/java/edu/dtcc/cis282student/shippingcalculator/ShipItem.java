@@ -1,17 +1,17 @@
 package edu.dtcc.cis282student.shippingcalculator;
 
-public class ShipItem {
-    static final Double BASE = 3.00;
-    static final Double ADDED = .50;
-    static final int BASE_WEIGHT = 16;
-    static final double EXTRA_OUNCES = 4.0;
+class ShipItem {
+    private static final Double BASE = 3.00;
+    private static final Double ADDED = .50;
+    private static final int BASE_WEIGHT = 16;
+    private static final double EXTRA_OUNCES = 4.0;
 
     private Integer mWeight;
     private Double mBaseCost;
     private Double mAddedCost;
     private Double mTotalCost;
 
-    public ShipItem() {
+    ShipItem() {
         mWeight = 0;
         mAddedCost = 0.0;
         mBaseCost = BASE;
@@ -23,7 +23,7 @@ public class ShipItem {
         computeCosts();
     }
 
-    public void computeCosts() {
+    private void computeCosts() {
         mAddedCost = 0.0;
         mBaseCost = BASE;
 
@@ -35,15 +35,15 @@ public class ShipItem {
         mTotalCost = mBaseCost + mAddedCost;
     }
 
-    public Double getBaseCost() {
+    Double getBaseCost() {
         return mBaseCost;
     }
 
-    public Double getAddedCost() {
+    Double getAddedCost() {
         return mAddedCost;
     }
 
-    public Double getTotalCost() {
+    Double getTotalCost() {
         return mTotalCost;
     }
 }

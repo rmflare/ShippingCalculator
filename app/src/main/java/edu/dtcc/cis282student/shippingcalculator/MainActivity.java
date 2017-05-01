@@ -4,17 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private ShipItem shipItem;
-    private EditText weightET;
-    private TextView baseCostTV;
-    private TextView addedCostTV;
-    private TextView totalCostTV;
+    ShipItem shipItem;
+
+    private TextView tvBaseCost;
+    private TextView tvAddedCost;
+    private TextView tvTotalCost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
         shipItem = new ShipItem();
 
-        weightET = (EditText) findViewById(R.id.editText1);
-        baseCostTV = (TextView) findViewById(R.id.textView4);
-        addedCostTV = (TextView) findViewById(R.id.textView6);
-        totalCostTV = (TextView) findViewById(R.id.textView8);
+        EditText etWeight = (EditText) findViewById(R.id.et_weight);
+        tvBaseCost = (TextView) findViewById(R.id.tv_baseCost);
+        tvAddedCost = (TextView) findViewById(R.id.tv_addedCost);
+        tvTotalCost = (TextView) findViewById(R.id.tv_totalCost);
 
-        weightET.addTextChangedListener(weightTextWatcher);
+        etWeight.addTextChangedListener(weightTextWatcher);
     }
 
     private TextWatcher weightTextWatcher = new TextWatcher() {
@@ -45,23 +43,9 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void displayShipping() {
-        baseCostTV.setText("$" + String.format("%.02f", shipItem.getBaseCost()));
-        addedCostTV.setText("$" + String.format("%.02f", shipItem.getAddedCost()));
-        totalCostTV.setText("$" + String.format("%.02f", shipItem.getTotalCost()));
+        tvBaseCost.setText(getString(R.string.costString, shipItem.getBaseCost()));
+        tvAddedCost.setText(getString(R.string.costString, shipItem.getAddedCost()));
+        tvTotalCost.setText(getString(R.string.costString, shipItem.getTotalCost()));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.my, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

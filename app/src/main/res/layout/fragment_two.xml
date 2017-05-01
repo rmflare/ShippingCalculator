@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true">
+
+    <!-- TEXTVIEWS FOR BASE COST LABEL AND COMPUTATION -->
+
+    <TextView
+        android:id="@+id/tv_baseCost_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingStart="@dimen/output_margin_buffer"
+        android:text="@string/baseLBL"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@id/tv_baseCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_baseCost_label"
+        android:layout_alignBottom="@id/tv_baseCost_label"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="@dimen/output_margin_buffer"
+        android:text="@string/zeroDec"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <!-- TEXTVIEWS FOR ADDED COST LABEL AND COMPUTATION -->
+
+    <TextView
+        android:id="@+id/tv_addedCost_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tv_baseCost_label"
+        android:layout_marginTop="15dp"
+        android:paddingStart="@dimen/output_margin_buffer"
+        android:text="@string/addedCostLBL"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@id/tv_addedCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_addedCost_label"
+        android:layout_alignBottom="@id/tv_addedCost_label"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="@dimen/output_margin_buffer"
+        android:text="@string/zeroDec"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <!-- TEXTVIEWS FOR TOTAL COST LABEL AND COMPUTATION -->
+
+    <TextView
+        android:id="@+id/tv_totalCost_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tv_addedCost_label"
+        android:layout_marginTop="15dp"
+        android:paddingStart="@dimen/output_margin_buffer"
+        android:text="@string/totalCostLBL"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@id/tv_totalCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_totalCost_label"
+        android:layout_alignBottom="@id/tv_totalCost_label"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="@dimen/output_margin_buffer"
+        android:text="@string/zeroDec"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+</RelativeLayout>

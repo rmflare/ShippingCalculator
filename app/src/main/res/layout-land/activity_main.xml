@@ -10,19 +10,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <fragment android:name="edu.dtcc.cis282student.shippingcalculator.FragmentOne"
-        android:id="@+id/fragment_1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearlayout_1"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        tools:layout="@layout/fragment_one" />
+        android:layout_alignParentStart="true">
+
+        <fragment android:name="edu.dtcc.cis282student.shippingcalculator.FragmentOne"
+            android:id="@+id/fragment_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            tools:layout="@layout/fragment_one" />
+
+    </LinearLayout>
 
     <fragment android:name="edu.dtcc.cis282student.shippingcalculator.FragmentTwo"
         android:id="@+id/fragment_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_1"
+        android:layout_toEndOf="@id/linearlayout_1"
         android:layout_gravity="center"
         android:gravity="center"
         tools:layout="@layout/fragment_two" />
